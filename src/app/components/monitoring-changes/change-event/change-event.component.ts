@@ -6,17 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./change-event.component.css']
 })
 export class ChangeEventComponent implements OnInit {
-  type!: string;
+  status: string = "ONLINE";
 
   constructor() {
-    this.type = navigator.connection.type
   }
 
   ngOnInit(): void {
     navigator.connection.addEventListener('change', () => {
-      console.log(navigator);
-      console.log(navigator.connection.type);
-      this.type = navigator.connection.type;
+      if (window.navigator.onLine) {
+        this.status = "ONLINE";
+      } else if (!window.navigator.onLine) {
+        this.status = "OFFLINE";
+      }
+      console.log("Change event: " + window.navigator.onLine);
     });
   }
+
 }

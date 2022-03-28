@@ -7,7 +7,7 @@ import { ConnectionService } from 'ng-connection-service';
   styleUrls: ['./ng-connection-service.component.css']
 })
 export class NgConnectionServiceComponent implements OnInit {
-  status: string = "ONLINE"
+  status: string = "ONLINE";
   isConnected: boolean = true;
 
   constructor(private connectionService: ConnectionService) {
@@ -22,7 +22,7 @@ export class NgConnectionServiceComponent implements OnInit {
       else {
         this.status = "OFFLINE";
       }
-      console.log(this.status)
+      console.log("ng-connection-service: " + this.status);
     })
   }
 

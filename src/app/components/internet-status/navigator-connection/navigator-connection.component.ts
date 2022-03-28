@@ -6,28 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigator-connection.component.css']
 })
 export class NavigatorConnectionComponent implements OnInit {
-  type: any;
+  type: string = navigator.connection.type;
+  status?: string;
 
-  constructor() {
-    navigator.connection.addEventListener('change', this.logNetworkInfo);
-  }
+  constructor() {}
 
   logNetworkInfo() {
     // Network type that browser uses
-    console.log('type: ' + navigator.connection.type);
+    this.type = navigator.connection.type;
+    console.log("navigator.connection.type: " + navigator.connection.type);
 
     // This doesn't work in TypeScript
-    // console.log("downlinkMax: " + navigator.connection.downlinkMax);
-    // console.log("downlink: " + navigator.connection.downlink);
-    // console.log("effectiveType: " + navigator.connection.effectiveType);
-    // console.log("rtt: " + navigator.connection.rtt);  
+    // console.log("navigator.connection.downlinkMax: " + navigator.connection.downlinkMax);
+    // console.log("navigator.connection.downlink: " + navigator.connection.downlink);
+    // console.log("navigator.connection.effectiveType: " + navigator.connection.effectiveType);
+    // console.log("navigator.connection.rtt: " + navigator.connection.rtt);  
 
     // Solution with the network-information-types
-    // console.log("downlinkMax: " + navigator.connection.downlinkMax);
-    // console.log("downlink: " + navigator.connection.downlink);
-    // console.log("effectiveType: " + navigator.connection.effectiveType);
-    // console.log("rtt: " + navigator.connection.rtt);  
-}
+    // console.log("navigator.connection.downlinkMax: " + navigator.connection.downlinkMax);
+    // console.log("navigator.connection.downlink: " + navigator.connection.downlink);
+    // console.log("navigator.connection.effectiveType: " + navigator.connection.effectiveType);
+    // console.log("navigator.connection.rtt: " + navigator.connection.rtt);  
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { 
+    navigator.connection.addEventListener('change', this.logNetworkInfo);
+  }
+
 }

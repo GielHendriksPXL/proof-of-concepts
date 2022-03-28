@@ -18,6 +18,7 @@ export class NgxOnlineStatusComponent implements OnInit {
       } else if (status == 1) {
         this.status = "ONLINE";
       }
+      console.log("ngx-online-status: " + status);
     });
   }
 }

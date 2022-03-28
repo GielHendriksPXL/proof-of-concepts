@@ -6,21 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigator-online.component.css']
 })
 export class NavigatorOnlineComponent implements OnInit {
-  online = window.navigator.onLine;
+  status: string = "ONLINE";
 
   constructor() { }
 
   ngOnInit(): void {
-    window.addEventListener('offline', function (e) {
-      if (navigator.connection) {
-        console.log('offline');
-      }
+    window.addEventListener('offline', () => {
+      this.status = "OFFLINE";
+      console.log("navigator.onLine: " + window.navigator.onLine);
     });
-    window.addEventListener('online', function (e) {
-      if (navigator.connection) {
-        console.log('online');
-      }
+    window.addEventListener('online', () => {
+      this.status = "ONLINE";
+      console.log("navigator.onLine: " + window.navigator.onLine);
     });
   }
-
+  
 }

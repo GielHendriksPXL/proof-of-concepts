@@ -13,12 +13,12 @@ export class OfflineOnlineEventComponent implements OnInit {
   ngOnInit(): void {
     window.addEventListener('offline', () => {
       this.status = "OFFLINE";
-      console.log(this.status);
+      console.log("offline/online eventListener: " + this.status);
     });
 
     window.addEventListener('online', () => {
       this.status = "ONLINE";
-      console.log(this.status);
+      console.log("offline/online eventListener: " + this.status);
     })
   }
 
