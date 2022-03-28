@@ -13,11 +13,10 @@ export class ChangeEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    navigator.connection.addEventListener('change', event => {
-      console.log(navigator)
+    navigator.connection.addEventListener('change', () => {
+      console.log(navigator);
       console.log(navigator.connection.type);
       this.type = navigator.connection.type;
     });
   }
-
 }

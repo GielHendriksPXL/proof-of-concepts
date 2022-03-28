@@ -7,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigatorOnlineComponent implements OnInit {
   online = window.navigator.onLine;
-  type = window.navigator.connection.type;
 
   constructor() { }
 
   ngOnInit(): void {
-    if (navigator.connection) {
-      max = navigator.connection.downlinkMax;
-    }
-    window.addEventListener('offline', function (e) { console.log('offline') });
-    window.addEventListener('online', function (e) { console.log('online') });
+    window.addEventListener('offline', function (e) {
+      if (navigator.connection) {
+        console.log('offline');
+      }
+    });
+    window.addEventListener('online', function (e) {
+      if (navigator.connection) {
+        console.log('online');
+      }
+    });
   }
 
 }
