@@ -9,6 +9,10 @@ import { OfflineOnlineEventComponent } from './components/monitoring-changes/off
 import { ChangeEventComponent } from './components/monitoring-changes/change-event/change-event.component';
 import { OnlineStatusModule } from 'ngx-online-status';
 import { NgxOnlineStatusComponent } from './components/internet-status/ngx-online-status/ngx-online-status.component';
+import { SpeedTestModule } from 'ng-speed-test';
+import { NgSpeedTestComponent } from './components/internet-status/ng-speed-test/ng-speed-test.component';
+import { NgNetworkStatusComponent } from './components/internet-status/ngx-network/ngx-network.component';
+import { NgxNetworkModule } from 'ngx-network';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,15 @@ import { NgxOnlineStatusComponent } from './components/internet-status/ngx-onlin
     NgConnectionServiceComponent,
     OfflineOnlineEventComponent,
     ChangeEventComponent,
-    NgxOnlineStatusComponent
+    NgxOnlineStatusComponent,
+    NgSpeedTestComponent,
+    NgNetworkStatusComponent
   ],
   imports: [
     BrowserModule,
-    OnlineStatusModule
+    OnlineStatusModule,
+    SpeedTestModule,
+    NgxNetworkModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
