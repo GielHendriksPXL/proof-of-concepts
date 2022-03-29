@@ -10,7 +10,7 @@ export class NgSpeedTestComponent implements OnInit {
   status: string = "ONLINE";
   speed: number = 0;
 
-  constructor(private speedTestService: SpeedTestService) {}
+  constructor(private speedTestService: SpeedTestService) { }
 
   ngOnInit(): void {
     this.speedTestService.getMbps(

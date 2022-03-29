@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxNetworkService } from 'ngx-network';
 
 @Component({
-  selector: 'app-ng-network-status',
+  selector: 'app-ngx-network',
   templateUrl: './ngx-network.component.html',
   styleUrls: ['./ngx-network.component.css']
 })
@@ -13,17 +13,16 @@ export class NgNetworkStatusComponent implements OnInit {
 
   ngOnInit(): void {
     /*this.networkService.onSpeedChanged().subscribe((networkSpeedInfo) => {
-      this.speed = networkSpeedInfo.speed
-      console.log(networkSpeedInfo);
+      this.speed = networkSpeedInfo.speed;
+      console.log(this.speed);
     })*/
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.networkService.getSpeed().subscribe(async (networkSpeedInfo) => {
         this.speed = networkSpeedInfo.speed;
         console.log(this.speed);
       })
-    }, 5000);
-
+    }, 500);*/
   }
 
 }

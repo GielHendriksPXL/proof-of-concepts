@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "network-information-types": "^0.1.1",
+    "network-information-types": "^0.1.0",
     "ng-connection-service": "^1.0.4",
     "ng-speed-test": "^2.2.0",
     "ngx-network": "^1.0.1",
