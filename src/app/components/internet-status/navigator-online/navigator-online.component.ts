@@ -10,7 +10,7 @@ export class NavigatorOnlineComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
   checkStatus() {

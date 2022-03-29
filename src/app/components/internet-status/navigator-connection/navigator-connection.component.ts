@@ -27,8 +27,8 @@ export class NavigatorConnectionComponent implements OnInit {
     // console.log("navigator.connection.downlink: " + navigator.connection.downlink);
     // console.log("navigator.connection.effectiveType: " + navigator.connection.effectiveType);
     // console.log("navigator.connection.rtt: " + navigator.connection.rtt);
-    // Still doesn't work
     // }
+    // Still doesn't work
   }
 
   ngOnInit(): void {
