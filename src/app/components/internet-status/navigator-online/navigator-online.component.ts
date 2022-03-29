@@ -11,14 +11,16 @@ export class NavigatorOnlineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    window.addEventListener('offline', () => {
-      this.status = "OFFLINE";
-      console.log("navigator.onLine: " + window.navigator.onLine);
-    });
-    window.addEventListener('online', () => {
+  }
+
+  checkStatus() {
+    if (window.navigator.onLine) {
       this.status = "ONLINE";
       console.log("navigator.onLine: " + window.navigator.onLine);
-    });
+    } else {
+      this.status = "OFFLINE";
+      console.log("navigator.onLine: " + window.navigator.onLine);
+    }
   }
-  
+
 }
