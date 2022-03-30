@@ -14,14 +14,14 @@ export class NgSpeedTestComponent implements OnInit {
 
   ngOnInit(): void {
     this.speedTestService.getMbps(
-      {
+      /*{
         iterations: 5,
         file: {
           path: 'https://raw.githubusercontent.com/jrquick17/ng-speed-test/02c59e4afde67c35a5ba74014b91d44b33c0b3fe/demo/src/assets/500kb.jpg',
           size: 3271592,
           shouldBustCache: true
         }
-      }
+      }*/
     ).subscribe(async (speed) => {
       this.speed = speed;
       console.log("ng-speed-test snelheid in mbps: " + speed);

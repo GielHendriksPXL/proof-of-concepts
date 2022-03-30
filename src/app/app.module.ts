@@ -8,7 +8,6 @@ import { NgConnectionServiceComponent } from './components/internet-status/ng-co
 import { OfflineOnlineEventComponent } from './components/monitoring-changes/offline-online-event/offline-online-event.component';
 import { ChangeEventComponent } from './components/monitoring-changes/change-event/change-event.component';
 import { OnlineStatusModule } from 'ngx-online-status';
-import { NgxOnlineStatusComponent } from './components/internet-status/ngx-online-status/ngx-online-status.component';
 import { SpeedTestModule } from 'ng-speed-test';
 import { NgSpeedTestComponent } from './components/internet-status/ng-speed-test/ng-speed-test.component';
 import { NgNetworkStatusComponent } from './components/internet-status/ngx-network/ngx-network.component';
@@ -22,7 +21,6 @@ import { NgxNetworkModule } from 'ngx-network';
     NgConnectionServiceComponent,
     OfflineOnlineEventComponent,
     ChangeEventComponent,
-    NgxOnlineStatusComponent,
     NgSpeedTestComponent,
     NgNetworkStatusComponent
   ],
