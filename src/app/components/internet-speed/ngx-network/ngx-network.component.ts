@@ -12,17 +12,22 @@ export class NgNetworkStatusComponent implements OnInit {
   constructor(private networkService: NgxNetworkService) { }
 
   ngOnInit(): void {
-    /*this.networkService.onSpeedChanged().subscribe((networkSpeedInfo) => {
+    /*let networkServiceSubscription = this.networkService.onSpeedChanged().subscribe((networkSpeedInfo) => {
       this.speed = networkSpeedInfo.speed;
       console.log(this.speed);
-    })*/
+    });
 
-    /*setTimeout(() => {
+    networkServiceSubscription.unsubscribe();
+    setTimeout(() => {
+      networkServiceSubscription.unsubscribe();
+    }, 10000);*/
+
+    setTimeout(() => {
       this.networkService.getSpeed().subscribe(async (networkSpeedInfo) => {
         this.speed = networkSpeedInfo.speed;
         console.log(this.speed);
       })
-    }, 500);*/
+    }, 10000);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from 'ng-connection-service';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ng-connection-service',
@@ -7,14 +8,20 @@ import { ConnectionService } from 'ng-connection-service';
   styleUrls: ['./ng-connection-service.component.css']
 })
 export class NgConnectionServiceComponent implements OnInit {
-  status: string = "ONLINE";
-  isConnected: boolean = true;
+  status$!: Observable<string>;
 
   constructor(private connectionService: ConnectionService) {
   }
 
   ngOnInit(): void {
-    this.connectionService.monitor().subscribe(isConnected => {
+    this.status$ = this.connectionService.monitor().pipe(
+      map((isConnected) => {
+        return isConnected ? "ONLINE" : "OFFLINE";
+      })
+    );
+  
+    // 
+    /*this.connectionService.monitor().subscribe(isConnected => {
       this.isConnected = isConnected;
       if (this.isConnected) {
         this.status = "ONLINE";
@@ -23,7 +30,7 @@ export class NgConnectionServiceComponent implements OnInit {
         this.status = "OFFLINE";
       }
       console.log("ng-connection-service: " + this.status);
-    })
+    })*/
   }
 
 }

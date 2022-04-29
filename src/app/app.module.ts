@@ -9,8 +9,8 @@ import { OfflineOnlineEventComponent } from './components/monitoring-changes/off
 import { ChangeEventComponent } from './components/monitoring-changes/change-event/change-event.component';
 import { OnlineStatusModule } from 'ngx-online-status';
 import { SpeedTestModule } from 'ng-speed-test';
-import { NgSpeedTestComponent } from './components/internet-status/ng-speed-test/ng-speed-test.component';
-import { NgNetworkStatusComponent } from './components/internet-status/ngx-network/ngx-network.component';
+import { NgSpeedTestComponent } from './components/internet-speed/ng-speed-test/ng-speed-test.component';
+import { NgNetworkStatusComponent } from './components/internet-speed/ngx-network/ngx-network.component';
 import { NgxNetworkModule } from 'ngx-network';
 
 @NgModule({
