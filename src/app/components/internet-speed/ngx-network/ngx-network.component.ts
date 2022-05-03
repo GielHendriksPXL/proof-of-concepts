@@ -23,7 +23,7 @@ export class NgNetworkStatusComponent implements OnInit {
     }, 10000);*/
 
     setTimeout(() => {
-      this.networkService.getSpeed().subscribe(async (networkSpeedInfo) => {
+      this.networkService.getSpeed().subscribe((networkSpeedInfo) => {
         this.speed = networkSpeedInfo.speed;
         console.log(this.speed);
       })

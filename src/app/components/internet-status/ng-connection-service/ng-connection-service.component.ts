@@ -16,21 +16,9 @@ export class NgConnectionServiceComponent implements OnInit {
   ngOnInit(): void {
     this.status$ = this.connectionService.monitor().pipe(
       map((isConnected) => {
+        console.log("isConnected" + isConnected);
         return isConnected ? "ONLINE" : "OFFLINE";
       })
     );
-  
-    // 
-    /*this.connectionService.monitor().subscribe(isConnected => {
-      this.isConnected = isConnected;
-      if (this.isConnected) {
-        this.status = "ONLINE";
-      }
-      else {
-        this.status = "OFFLINE";
-      }
-      console.log("ng-connection-service: " + this.status);
-    })*/
   }
-
 }
