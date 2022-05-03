@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeedTestService } from 'ng-speed-test';
-import { map, Observable, Subscription } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ng-speed-test',
@@ -9,34 +9,30 @@ import { map, Observable, Subscription } from 'rxjs';
 })
 export class NgSpeedTestComponent implements OnInit {
   status$!: Observable<string>;
-  speed: number = 0;
-  private speedTestServiceSubscription!: Subscription;
+  speed$!: Observable<number>;
 
   constructor(private speedTestService: SpeedTestService) { }
 
   ngOnInit(): void {
-    this.speedTestServiceSubscription = this.speedTestService.getMbps(
+    this.speed$ = this.speedTestService.getMbps(
       {
-        iterations: 5,
+        iterations: 10,
         file: {
           path: 'https://raw.githubusercontent.com/jrquick17/ng-speed-test/02c59e4afde67c35a5ba74014b91d44b33c0b3fe/demo/src/assets/500kb.jpg',
           size: 3271592,
           shouldBustCache: true
         }
       }
-    ).subscribe(speed => {
-      this.speed = speed;
-      console.log("ng-speed-test snelheid in mbps: " + speed);
-    });
+    ).pipe(
+      map(speed => {
+        return speed;
+      })
+    );
 
     this.status$ = this.speedTestService.isOnline().pipe(
       map(isOnline => {
-        return isOnline ? "OFFLINE" : "ONLINE";
+        return isOnline ? "ONLINE" : "OFFLINE";
       })
     );
-  }
-
-  ngOnDestroy(): void {
-    this.speedTestServiceSubscription.unsubscribe();
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxNetworkService } from 'ngx-network';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ngx-network',
@@ -7,27 +8,17 @@ import { NgxNetworkService } from 'ngx-network';
   styleUrls: ['./ngx-network.component.css']
 })
 export class NgNetworkStatusComponent implements OnInit {
-  speed: number = 0;
+  speed$!: Observable<number>;
 
   constructor(private networkService: NgxNetworkService) { }
 
   ngOnInit(): void {
-    /*let networkServiceSubscription = this.networkService.onSpeedChanged().subscribe((networkSpeedInfo) => {
-      this.speed = networkSpeedInfo.speed;
-      console.log(this.speed);
-    });
-
-    networkServiceSubscription.unsubscribe();
     setTimeout(() => {
-      networkServiceSubscription.unsubscribe();
-    }, 10000);*/
-
-    setTimeout(() => {
-      this.networkService.getSpeed().subscribe((networkSpeedInfo) => {
-        this.speed = networkSpeedInfo.speed;
-        console.log(this.speed);
-      })
+      this.speed$ = this.networkService.getSpeed().pipe(
+        map((networkSpeedInfo) => {
+          return networkSpeedInfo.speed;
+        })
+      );
     }, 10000);
   }
-
 }
