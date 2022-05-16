@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgNetworkStatusComponent } from './ngx-network.component';
+import { NgxNetworkComponent } from './ngx-network.component';
 
 describe('NgNetworkStatusComponent', () => {
-  let component: NgNetworkStatusComponent;
-  let fixture: ComponentFixture<NgNetworkStatusComponent>;
+  let component: NgxNetworkComponent;
+  let fixture: ComponentFixture<NgxNetworkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgNetworkStatusComponent ]
+      declarations: [ NgxNetworkComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgNetworkStatusComponent);
+    fixture = TestBed.createComponent(NgxNetworkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

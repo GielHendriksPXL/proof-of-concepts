@@ -7,18 +7,16 @@ import { map, Observable } from 'rxjs';
   templateUrl: './ngx-network.component.html',
   styleUrls: ['./ngx-network.component.css']
 })
-export class NgNetworkStatusComponent implements OnInit {
+export class NgxNetworkComponent implements OnInit {
   speed$!: Observable<number>;
 
   constructor(private networkService: NgxNetworkService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.speed$ = this.networkService.getSpeed().pipe(
-        map((networkSpeedInfo) => {
-          return networkSpeedInfo.speed;
-        })
-      );
-    }, 10000);
+    this.speed$ = this.networkService.getSpeed().pipe(
+      map((networkSpeedInfo) => {
+        return networkSpeedInfo.speed;
+      })
+    );
   }
 }

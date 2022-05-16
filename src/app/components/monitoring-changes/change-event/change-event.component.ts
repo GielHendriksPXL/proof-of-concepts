@@ -18,7 +18,6 @@ export class ChangeEventComponent implements OnInit {
       } else if (!window.navigator.onLine) {
         this.status = "OFFLINE";
       }
-      console.log("Change event: " + window.navigator.onLine);
     });
   }
 

@@ -10,7 +10,7 @@ import { ChangeEventComponent } from './components/monitoring-changes/change-eve
 import { OnlineStatusModule } from 'ngx-online-status';
 import { SpeedTestModule } from 'ng-speed-test';
 import { NgSpeedTestComponent } from './components/internet-speed/ng-speed-test/ng-speed-test.component';
-import { NgNetworkStatusComponent } from './components/internet-speed/ngx-network/ngx-network.component';
+import { NgxNetworkComponent } from './components/internet-speed/ngx-network/ngx-network.component';
 import { NgxNetworkModule } from 'ngx-network';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { NgxNetworkModule } from 'ngx-network';
     OfflineOnlineEventComponent,
     ChangeEventComponent,
     NgSpeedTestComponent,
-    NgNetworkStatusComponent
+    NgxNetworkComponent
   ],
   imports: [
     BrowserModule,

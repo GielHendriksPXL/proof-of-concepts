@@ -19,7 +19,7 @@ export class NgSpeedTestComponent implements OnInit {
         iterations: 10,
         file: {
           path: 'https://raw.githubusercontent.com/jrquick17/ng-speed-test/02c59e4afde67c35a5ba74014b91d44b33c0b3fe/demo/src/assets/500kb.jpg',
-          size: 3271592,
+          size: 408949,
           shouldBustCache: true
         }
       }
