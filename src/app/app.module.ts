@@ -12,10 +12,10 @@ import { SpeedTestModule } from 'ng-speed-test';
 import { NgSpeedTestComponent } from './components/internet-speed/ng-speed-test/ng-speed-test.component';
 import { NgxNetworkComponent } from './components/internet-speed/ngx-network/ngx-network.component';
 import { NgxNetworkModule } from 'ngx-network';
-import { ServiceWorkersComponent } from './components/data-synchronization/service-workers/service-workers/service-workers.component';
+import { ServiceWorkersComponent } from './components/data-synchronization/service-workers/service-workers.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { LocalstorageComponent } from './components/data-synchronization/localstorage/localstorage/localstorage.component';
+import { LocalstorageComponent } from './components/data-synchronization/localstorage/localstorage.component';
 
 @NgModule({
   declarations: [
