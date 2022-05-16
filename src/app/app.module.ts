@@ -12,6 +12,10 @@ import { SpeedTestModule } from 'ng-speed-test';
 import { NgSpeedTestComponent } from './components/internet-speed/ng-speed-test/ng-speed-test.component';
 import { NgxNetworkComponent } from './components/internet-speed/ngx-network/ngx-network.component';
 import { NgxNetworkModule } from 'ngx-network';
+import { ServiceWorkersComponent } from './components/data-synchronization/service-workers/service-workers/service-workers.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { LocalstorageComponent } from './components/data-synchronization/localstorage/localstorage/localstorage.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,21 @@ import { NgxNetworkModule } from 'ngx-network';
     OfflineOnlineEventComponent,
     ChangeEventComponent,
     NgSpeedTestComponent,
-    NgxNetworkComponent
+    NgxNetworkComponent,
+    ServiceWorkersComponent,
+    LocalstorageComponent
   ],
   imports: [
     BrowserModule,
     OnlineStatusModule,
     SpeedTestModule,
-    NgxNetworkModule.forRoot()
+    NgxNetworkModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
