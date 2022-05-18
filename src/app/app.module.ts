@@ -16,6 +16,20 @@ import { ServiceWorkersComponent } from './components/data-synchronization/servi
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LocalstorageComponent } from './components/data-synchronization/localstorage/localstorage.component';
+import { IndexeddbComponent } from './components/data-synchronization/indexeddb/indexeddb.component';
+import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+
+const dbConfig: DBConfig = {
+  name: 'ProofOfConceptDB',
+  version: 1,
+  objectStoresMeta: [{
+    store: 'jokes',
+    storeConfig: { keyPath: 'id', autoIncrement: true },
+    storeSchema: [
+      { name: 'joke', keypath: 'joke', options: { unique: false } }
+    ]
+  }]
+}
 
 @NgModule({
   declarations: [
@@ -28,12 +42,14 @@ import { LocalstorageComponent } from './components/data-synchronization/localst
     NgSpeedTestComponent,
     NgxNetworkComponent,
     ServiceWorkersComponent,
-    LocalstorageComponent
+    LocalstorageComponent,
+    IndexeddbComponent
   ],
   imports: [
     BrowserModule,
     OnlineStatusModule,
     SpeedTestModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
     NgxNetworkModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

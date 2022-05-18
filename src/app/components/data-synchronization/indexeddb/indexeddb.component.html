@@ -1,0 +1,5 @@
+<h3>IndexedDB:</h3>
+<button (click)="add()">Voeg toe</button>
+<button (click)="empty()">Maak database leeg</button>
+<p>Inhoud van IndexedDB:</p>
+<p *ngFor="let item of indexedDBContent$ | async">{{item}}</p>

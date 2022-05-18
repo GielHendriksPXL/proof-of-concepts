@@ -23,6 +23,7 @@
     "network-information-types": "^0.1.0",
     "ng-connection-service": "^1.0.4",
     "ng-speed-test": "^2.2.0",
+    "ngx-indexed-db": "^11.0.0",
     "ngx-network": "^1.0.1",
     "ngx-online-status": "^1.0.1",
     "rxjs": "~7.5.0",
