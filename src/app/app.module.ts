@@ -18,6 +18,8 @@ import { environment } from '../environments/environment';
 import { LocalstorageComponent } from './components/data-synchronization/localstorage/localstorage.component';
 import { IndexeddbComponent } from './components/data-synchronization/indexeddb/indexeddb.component';
 import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const dbConfig: DBConfig = {
   name: 'ProofOfConceptDB',
@@ -47,6 +49,7 @@ const dbConfig: DBConfig = {
   ],
   imports: [
     BrowserModule,
+    MatTabsModule,
     OnlineStatusModule,
     SpeedTestModule,
     NgxIndexedDBModule.forRoot(dbConfig),
@@ -56,7 +59,8 @@ const dbConfig: DBConfig = {
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

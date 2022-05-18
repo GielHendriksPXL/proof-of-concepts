@@ -1,17 +1,20 @@
-<h1>Internetverbinding status:</h1>
-<app-navigator-online></app-navigator-online>
-<app-ng-connection-service></app-ng-connection-service>
-<hr>
-<h1>Veranderingen in status waarnemen:</h1>
-<app-change-event></app-change-event>
-<app-offline-online-event></app-offline-online-event>
-<hr>
-<h1>Internetsnelheid meten:</h1>
-<app-ng-speed-test></app-ng-speed-test>
-<app-ngx-network></app-ngx-network>
-<hr>
-<h1>Datasynchronistatie:</h1>
-<app-service-workers></app-service-workers>
-<app-localstorage></app-localstorage>
-<app-indexeddb></app-indexeddb>
-<hr>
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab label="Internetverbinding status">
+    <app-navigator-online></app-navigator-online>
+    <app-navigator-connection></app-navigator-connection>
+    <app-ng-connection-service></app-ng-connection-service>    
+  </mat-tab>
+  <mat-tab label="Veranderingen in status">
+    <app-change-event></app-change-event>
+    <app-offline-online-event></app-offline-online-event>    
+  </mat-tab>
+  <mat-tab label="Internetsnelheid">
+    <app-ng-speed-test></app-ng-speed-test>
+    <app-ngx-network></app-ngx-network>    
+  </mat-tab>
+  <mat-tab label="Datasynchronisatie">
+    <app-service-workers></app-service-workers>
+    <app-localstorage></app-localstorage>
+    <app-indexeddb></app-indexeddb>    
+  </mat-tab>
+</mat-tab-group>
