@@ -21,6 +21,7 @@ import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CacheApiComponent } from './components/data-synchronization/cache-api/cache-api.component';
+import { NgxImageCompressComponent } from './components/data-synchronization/ngx-image-compress/ngx-image-compress.component';
 
 const dbConfig: DBConfig = {
   name: 'ProofOfConceptDB',
@@ -47,7 +48,8 @@ const dbConfig: DBConfig = {
     ServiceWorkersComponent,
     LocalstorageComponent,
     IndexeddbComponent,
-    CacheApiComponent
+    CacheApiComponent,
+    NgxImageCompressComponent
   ],
   imports: [
     BrowserModule,
