@@ -1,0 +1,5 @@
+<h3>Cache API</h3>
+<button (click)="addRequest()">Voeg request toe</button>
+<button (click)="getResponse()">Vraag response op</button>
+<button (click)="delete()">Verwijder</button>
+<p *ngFor="let response of responses" [innerHTML]="response"></p>
