@@ -1,0 +1,5 @@
+<h3>Retry-mechanisme</h3>
+<button (click)="doRequest()">Verstuur request</button>
+<button (click)="getSyncTasks()">Vraag SyncTask-objecten op</button>
+<button (click)="sync()">Sync</button>
+<p *ngFor="let syncTask of syncTasks">{{syncTask.body.title}}</p>
